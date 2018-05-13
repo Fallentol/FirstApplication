@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        super.onResume(); // tckb
+        super.onResume(); // tckb fsgsdae
         createNewSoundPool();
         mAssetManager = getAssets();
         CBSound = loadSound("sounds/soul.ogg");
