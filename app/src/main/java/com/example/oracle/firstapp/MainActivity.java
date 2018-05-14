@@ -59,35 +59,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Кнопка с текстовым полем
+     *
+     * @param view
+     */
     public void onClick(View view) {
         textNote.setText("Видал****");
         textNote.setTextColor(Color.RED);
+    }
+
+    public void changeColor(View view) {
+        View helloTextView = findViewById(R.id.mainWindow);
+        int x = (int)(Math.random()*250);
+        int y = (int)(Math.random()*250);
+        int z = (int)(Math.random()*250);
+        helloTextView.setBackgroundColor(Color.rgb(x,y,z));
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             playSound(CBSound);
-            /*switch (v.getId()) {
-                case R.id.imageButtonCow:
-                    playSound(mCowSound);
-                    break;
-                case R.id.imageButtonChicken:
-                    playSound(mChickenSound);
-                    break;
-                case R.id.imageButtonCat:
-                    playSound(mCatSound);
-                    break;
-                case R.id.imageButtonDuck:
-                    playSound(mDuckSound);
-                    break;
-                case R.id.imageButtonSheep:
-                    playSound(mSheepSound);
-                    break;
-                case R.id.imageButtonDog:
-                    playSound(mDogSound);
-                    break;
-            }*/
         }
     };
 
@@ -124,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             afd = mAssetManager.openFd(fileName); // дескриптор файла получаем из менеджера файлов
         } catch (IOException e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Не могу загрузить файл " + fileName ,
+            Toast.makeText(getApplicationContext(), "Не могу загрузить файл " + fileName,
                     Toast.LENGTH_SHORT).show();
             return -1;
         } catch (Exception er) {
@@ -139,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        super.onResume(); // tckb fsgsdae
+        super.onResume();
         createNewSoundPool();
         mAssetManager = getAssets();
         CBSound = loadSound("sounds/soul.ogg");

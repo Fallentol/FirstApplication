@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainWindow"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light"
@@ -15,19 +16,18 @@
         android:onClick="onClick"
         android:text="Добавить запись"
         android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="364dp" />
 
     <ImageButton
         android:id="@+id/CButton"
-        android:layout_width="wrap_content"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/myTestText"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351"
         app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="8dp" />
 
     <android.support.constraint.Barrier
         android:id="@+id/barrier2"
@@ -54,16 +54,6 @@
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
 
-    <TextView
-        android:id="@+id/myTestText"
-        android:layout_width="93dp"
-        android:layout_height="32dp"
-        android:text="Hello bully!"
-        android:textColor="@android:color/background_dark"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="462dp" />
-
     <android.support.constraint.Barrier
         android:id="@+id/barrier5"
         android:layout_width="wrap_content"
@@ -82,5 +72,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="347dp"
+        android:layout_height="36dp"
+        android:background="@android:color/holo_orange_dark"
+        android:onClick="changeColor"
+        android:text="Изменить цвет фона"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.506"
+        tools:layout_editor_absoluteX="19dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/myTestText"
+        android:layout_width="194dp"
+        android:layout_height="41dp"
+        android:text="TEST"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="82dp" />
 
 </android.support.constraint.ConstraintLayout>
